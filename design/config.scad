@@ -23,7 +23,12 @@ dn_tr=1;		// Down part's transparency (0 to 1)
 
 l_top_hei=22;		// Led top height
 sph_l_dia=20;		// Spherical substraction diameter
-sph_l_y=45;		// Spherical substraction y displacement
+sph_l_y=45;		// Spherical substraction y shift
+
+
+// Ultrasonic module
+
+sonic_z_pos=10;		// Spherical substraction z shift
 
 
 //// Computed variables - /!\ WARNING : Don't touch these ones /!\
