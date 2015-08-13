@@ -6,6 +6,7 @@
 include <./config.scad>;							// Configuration file
 include <./modules/ledSupport.scad>;			// Leds support module
 use <./parts/ultrasonicModule/module.scad>;	// Ultrasonic module
+use <./parts/led/led.scad>;						// LED
 
 
 // Design
@@ -15,7 +16,7 @@ color( up_color, up_tr ) {								// Upper Part
 		difference() {
 			union() {
 				scale([1, 1, ((1 / g_dia) * g_hei)]) sphere(r = g_rad);
-				ledPlace() ledSpots();
+				placeSpots() spot();
 			}
 
 			union() {
@@ -27,7 +28,7 @@ color( up_color, up_tr ) {								// Upper Part
 					translate([20, 7.5, 10]) cylinder(r = 3, h = 50);
 				}
 
-				ledPlace() ledSpots(false);
+				placeSpots() spot(false);
 				sonicPlace(0, 0, sonic_z_pos) sonicModule(1, shape=false);
 			}
 		}
@@ -55,6 +56,7 @@ color( dn_color, dn_tr ) {								// Bottom Part
 // Parts
 
 sonicPlace(0, 0, sonic_z_pos) sonicModule();
+placeSpots() led();
 
 
 // DEBUG
